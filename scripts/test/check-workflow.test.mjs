@@ -50,3 +50,18 @@ test('snk 步骤:owner 参数 + outputs light 行与基准串逐字一致', () =
 test('snk 步骤:outputs dark 行与基准串逐字一致', () => {
   assert.equal(snakeOutputLines()[1], SNAKE_OUTPUT_DARK);
 });
+
+test('推送步骤:Push snake to output branch 在 Generate 之后且参数齐全(T10 hotfix 防回归)', () => {
+  const steps = doc.jobs.generate.steps;
+  // 职责:定位推送步骤并断言 uses/with/env 完整在位;
+  // 背景:Platane/snk 只在 runner 内生成 dist/,不自行推送——缺推送步骤会导致 output 分支永不创建,线上图 404
+  const gi = steps.findIndex((s) => (s.uses || '').startsWith('Platane/snk@'));
+  assert.ok(gi !== -1, '找不到 snk 生成步骤');
+  const push = steps[gi + 1];
+  assert.ok(push, 'Generate 步骤之后缺少推送步骤');
+  assert.equal(push.name, 'Push snake to output branch');
+  assert.equal(push.uses, 'crazy-max/ghaction-github-pages@v4');
+  assert.equal(push.with.target_branch, 'output');
+  assert.equal(push.with.build_dir, 'dist');
+  assert.equal(push.env.GITHUB_TOKEN, '${{ secrets.GITHUB_TOKEN }}');
+});

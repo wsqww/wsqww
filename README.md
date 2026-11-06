@@ -35,8 +35,8 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wsqww/wsqww/output/dist/snake-dark.svg">
-    <img src="https://raw.githubusercontent.com/wsqww/wsqww/output/dist/snake.svg" alt="贡献贪吃蛇" loading="lazy">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wsqww/wsqww/output/snake-dark.svg">
+    <img src="https://raw.githubusercontent.com/wsqww/wsqww/output/snake.svg" alt="贡献贪吃蛇" loading="lazy">
   </picture>
 </p>
 

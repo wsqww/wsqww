@@ -60,9 +60,9 @@ test('index.html 导航链接(<a href>)与白名单精确一致(对抗性:防混
 });
 
 test('index.html 贪吃蛇图为 dark 版(终审 Fix-1:固定深色主题,light 近白格子刺眼)', () => {
-  assert.ok(html.includes('output/dist/snake-dark.svg'), '缺少 snake-dark.svg 引用');
+  assert.ok(html.includes('output/snake-dark.svg'), '缺少 snake-dark.svg 引用');
   // "snake.svg" 不是 "snake-dark.svg" 的子串(后者为 snake- 前缀),子串匹配可安全区分明暗两版
-  assert.ok(!html.includes('output/dist/snake.svg'), '仍存在 light 版 dist/snake.svg 引用(README 双版本不受此约束)');
+  assert.ok(!html.includes('output/snake.svg'), '仍存在 light 版 snake.svg 引用(README 双版本不受此约束)');
 });
 
 test('关键特性标记齐全', () => {

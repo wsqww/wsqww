@@ -7,8 +7,8 @@ import { access } from 'node:fs/promises';
 const README_LINK_WHITELIST = [
   'https://github.com/wsqww/blindshake',
   'https://panoscape.shuaiqiang.wang',
-  'https://raw.githubusercontent.com/wsqww/wsqww/output/dist/snake-dark.svg',
-  'https://raw.githubusercontent.com/wsqww/wsqww/output/dist/snake.svg',
+  'https://raw.githubusercontent.com/wsqww/wsqww/output/snake-dark.svg',
+  'https://raw.githubusercontent.com/wsqww/wsqww/output/snake.svg',
   'https://shuaiqiang.wang',
   'mailto:wangsq0926@163.com',
 ];
