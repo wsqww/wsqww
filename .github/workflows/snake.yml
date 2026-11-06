@@ -1,0 +1,28 @@
+name: snake
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: snake
+  cancel-in-progress: true
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Generate snake svg
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?palette=github-light&color_snake=#7b2ff7&color_dots=#ebedf0,#ffd23e,#ffd23e,#ffd23e,#ffd23e
+            dist/snake-dark.svg?palette=github-dark&color_snake=#7b2ff7&color_dots=#161b22,#ffd23e,#ffd23e,#ffd23e,#ffd23e

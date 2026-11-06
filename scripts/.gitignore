@@ -1,0 +1,7 @@
+node_modules/
+scripts/fonts/full-*.ttf
+# 补充:完整字体 zip 与解压目录不入库(简报意图"完整字体不入库")
+fonts/*.zip
+fonts/full/
+# Press Start 2P 完整源字型(fontsource latin 解压产物,修正波引入)不入库,OFL 许可单独入库
+fonts/press-start-2p-full.ttf

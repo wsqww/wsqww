@@ -1,0 +1,16 @@
+{
+  "name": "wsqww-assets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "subset": "node scripts/subset-font.mjs",
+    "gen": "node scripts/gen-assets.mjs",
+    "test": "node --test \"scripts/test/*.test.mjs\""
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "opentype.js": "^1.3.4",
+    "subset-font": "^2.4.0",
+    "wawoff2": "^2.0.1"
+  }
+}
